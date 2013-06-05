@@ -101,6 +101,10 @@ public class NestingShape extends Shape {
 		}
 	}
 	
+	/**
+	 * @param shape
+	 * @return -1 if no index found.
+	 */
 	public int indexOf(Shape shape){
 		return shapeList.indexOf(shape);
 	}
