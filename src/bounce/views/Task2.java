@@ -1,5 +1,8 @@
 package bounce.views;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.swing.event.TreeModelListener;
 import javax.swing.tree.TreeModel;
 import javax.swing.tree.TreePath;
@@ -18,14 +21,14 @@ import bounce.ShapeModel;
 public class Task2 implements TreeModel {
 
 	private ShapeModel adaptee;
-
+	
 	public Task2(ShapeModel model) {
 		adaptee = model;
 	}
 
 	@Override
 	public void addTreeModelListener(TreeModelListener l) {
-		// don't do anything. Task2 does not listen, nor broadcast.
+		// do nothing.
 	}
 
 	/**
@@ -90,7 +93,7 @@ public class Task2 implements TreeModel {
 
 	@Override
 	public void removeTreeModelListener(TreeModelListener l) {
-		// do nothing. Task2 doesn't care about listening.
+		// do nothing.
 	}
 
 	@Override

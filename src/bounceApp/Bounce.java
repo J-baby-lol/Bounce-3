@@ -26,14 +26,12 @@ import bounce.DynamicRectangleShape;
 import bounce.GemShape;
 import bounce.NestingShape;
 import bounce.OvalShape;
-import bounce.Painter;
 import bounce.RectangleShape;
 import bounce.Shape;
 import bounce.ShapeModel;
 import bounce.views.AnimationView;
-import bounce.views.Task3;
 import bounce.views.TableModelAdapter;
-import bounce.views.Task2;
+import bounce.views.Task3;
 
 /**
  * Main program for Bounce application. A Bounce instance sets up a GUI
@@ -69,6 +67,7 @@ public class Bounce {
 	// Swing components to handle user input.
 	private JButton fNewShape;
 	private JButton fDeleteShape;
+	@SuppressWarnings("rawtypes")
 	private JComboBox fShapeTypes;
 
 	// ShapeFactory instance.
@@ -100,7 +99,7 @@ public class Bounce {
 		// Show GUI and ensure the root shape within the JTree view is selected.
 		fTreeView.setSelectionPath(new TreePath(fModel.root()));
 		mainFrame.setVisible(true);
-
+		
 		// Get a ShapeFactory implementation and set the shape class to
 		// instantiate.
 		fFactory = loadShapeFactory();
@@ -228,6 +227,7 @@ public class Bounce {
 				fTableModelAdapter.setAdaptee(fShapeSelected);
 			}
 		});
+		
 	}
 
 	/*
@@ -265,6 +265,7 @@ public class Bounce {
 	 * interesting about this method - it simply builds up a composition of GUI
 	 * components and makes use of borders, scroll bars and layout managers.
 	 */
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	private JFrame buildGUI() {
 		// Create Swing model objects.
 		fTreeModelAdapter = new Task3(fModel);
